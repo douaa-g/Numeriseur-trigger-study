@@ -8,6 +8,8 @@ change the firmware. It extends my digital CFD study (github.com/douaa-g/CFD-tim
 design space of configurable trigger/digitiser boards of the UCTM / UCTM2 family (O. Bourrion et al., arXiv:1603.06816).
 Pulses are simulated (bi-exponential, 2 ns rise / 20 ns decay, illustrative), so the numbers are not those of any real detector or board.
 
+![Qt viewer](figures/qt_osc.png)
+
 ## 1. Timing resolution at 250 MS/s (`src/frontend250.py`)
 
 Pulses are generated at 16 GS/s, low-pass filtered (2nd-order Butterworth, cut-off fc), sampled at 250 MS/s with a random
@@ -18,6 +20,9 @@ interpolation. Best (f, d) picked on one event set, reported on an independent o
 |---|---|---|---|---|---|---|
 | CFD, linear [ps rms] | 370 | 273 | 186 | 134 | 135 | 164 |
 | CFD, cubic [ps rms] | 358 | 239 | 158 | 118 | 129 | 169 |
+
+![front-end bandwidth]
+(figures/fig_frontend.png)
 
 Reference: 47 ps at 1 GS/s without filter (CFD repository). At 250 MS/s the input bandwidth matters more than the
 interpolation: an optimum near 60 MHz (about 0.24 x fs); cubic interpolation gains about 12 % there.
@@ -50,6 +55,9 @@ amplitudes) = 349 pulses, front-end low-pass 60 MHz, CFD f = 5/8, d = 3 samples,
 | Gate length for +-6 ns arrival spread | 3 cycles needed (1 cycle: 21 of 40 coincidences) |
 | Time difference B - A (85 coincidences) | 193 ps rms, consistent with sqrt(2) x 134 ps |
 | Trigger latency | 24 ns after the first hit (`WIN` = 5) |
+
+![trigger checks]
+(figures/fig_trigger.png)
 
 Static version of the viewer outputs (oscillogram, amplitude histograms, time-difference histogram and a measured-vs-injected check): `figures/fig_viewer.png`.
 
