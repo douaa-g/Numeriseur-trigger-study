@@ -1,0 +1,143 @@
+{
+ "stream": {
+  "events": 162,
+  "pulses": 349,
+  "samples_per_channel": 40000,
+  "fs_MSps": 250,
+  "front_end_lowpass_MHz": 60,
+  "snr": 100
+ },
+ "cfd": {
+  "f": 0.625,
+  "delay_samples": 3,
+  "arming_LSB": 90,
+  "hold_samples": 16
+ },
+ "gate_win_cycles": 5,
+ "trigger_latency_from_first_hit_cycles": 6,
+ "hits": {
+  "total": 349,
+  "extra": 0,
+  "missing": 0
+ },
+ "rtl_bit_exact_all_equations": true,
+ "equations": [
+  {
+   "equation": "A & B",
+   "truth_table": "0x8888",
+   "fires_on": [
+    "AB",
+    "ABC",
+    "ABD",
+    "ABCD"
+   ],
+   "expected_from_event_labels": 85,
+   "rtl_triggers": 85,
+   "bit_exact_vs_python_model": true
+  },
+  {
+   "equation": "A & B & C",
+   "truth_table": "0x8080",
+   "fires_on": [
+    "ABC",
+    "ABCD"
+   ],
+   "expected_from_event_labels": 40,
+   "rtl_triggers": 40,
+   "bit_exact_vs_python_model": true
+  },
+  {
+   "equation": "(A & B) & !D",
+   "truth_table": "0x0088",
+   "fires_on": [
+    "AB",
+    "ABC"
+   ],
+   "expected_from_event_labels": 54,
+   "rtl_triggers": 54,
+   "bit_exact_vs_python_model": true
+  },
+  {
+   "equation": "MULT(2, A, B, C, D)",
+   "truth_table": "0xFEE8",
+   "fires_on": [
+    "AB",
+    "AC",
+    "BC",
+    "ABC",
+    "AD",
+    "BD",
+    "ABD",
+    "CD",
+    "ACD",
+    "BCD",
+    "ABCD"
+   ],
+   "expected_from_event_labels": 116,
+   "rtl_triggers": 116,
+   "bit_exact_vs_python_model": true
+  },
+  {
+   "equation": "A XOR B",
+   "truth_table": "0x6666",
+   "fires_on": [
+    "A",
+    "B",
+    "AC",
+    "BC",
+    "AD",
+    "BD",
+    "ACD",
+    "BCD"
+   ],
+   "expected_from_event_labels": 49,
+   "rtl_triggers": 49,
+   "bit_exact_vs_python_model": true
+  },
+  {
+   "equation": "(A & B) | (C & D)",
+   "truth_table": "0xF888",
+   "fires_on": [
+    "AB",
+    "ABC",
+    "ABD",
+    "CD",
+    "ACD",
+    "BCD",
+    "ABCD"
+   ],
+   "expected_from_event_labels": 96,
+   "rtl_triggers": 96,
+   "bit_exact_vs_python_model": true
+  },
+  {
+   "equation": "B & !A",
+   "truth_table": "0x4444",
+   "fires_on": [
+    "B",
+    "BC",
+    "BD",
+    "BCD"
+   ],
+   "expected_from_event_labels": 22,
+   "rtl_triggers": 22,
+   "bit_exact_vs_python_model": true
+  }
+ ],
+ "time_difference_B_minus_A": {
+  "coincident_events": 85,
+  "residual_rms_ps": 193.38069545892628
+ },
+ "window_scan_ABC": {
+  "expected": 40,
+  "triggers_vs_win": {
+   "1": 21,
+   "2": 33,
+   "3": 40,
+   "4": 40,
+   "5": 40,
+   "6": 40,
+   "7": 40
+  }
+ }
+}
