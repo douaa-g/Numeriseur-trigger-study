@@ -21,8 +21,7 @@ interpolation. Best (f, d) picked on one event set, reported on an independent o
 | CFD, linear [ps rms] | 370 | 273 | 186 | 134 | 135 | 164 |
 | CFD, cubic [ps rms] | 358 | 239 | 158 | 118 | 129 | 169 |
 
-![front-end bandwidth]
-(figures/fig_frontend.png)
+![front-end bandwidth](figures/fig_frontend.png)
 
 Reference: 47 ps at 1 GS/s without filter (CFD repository). At 250 MS/s the input bandwidth matters more than the
 interpolation: an optimum near 60 MHz (about 0.24 x fs); cubic interpolation gains about 12 % there.
@@ -56,8 +55,7 @@ amplitudes) = 349 pulses, front-end low-pass 60 MHz, CFD f = 5/8, d = 3 samples,
 | Time difference B - A (85 coincidences) | 193 ps rms, consistent with sqrt(2) x 134 ps |
 | Trigger latency | 24 ns after the first hit (`WIN` = 5) |
 
-![trigger checks]
-(figures/fig_trigger.png)
+![trigger checks](figures/fig_trigger.png)
 
 Static version of the viewer outputs (oscillogram, amplitude histograms, time-difference histogram and a measured-vs-injected check): `figures/fig_viewer.png`.
 
